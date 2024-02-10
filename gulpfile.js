@@ -43,7 +43,7 @@ gulp.task('default', (cb) => {
 	 },
 	 serveStatic: ['./public']
 	});
-	// SET UP WATCJERS TO LISTEN TO CHANGES IN FILES
+	// SET UP WATCHERS TO LISTEN TO CHANGES IN FILES
 	gulp.watch(['./src/*','./src/**/*.js','./src/components/**/**/*'], gulp.task('js-watch')).on('change', reload);;
 	// LISTEN FOR WHEN TO RELOAD PAGES
 	gulp

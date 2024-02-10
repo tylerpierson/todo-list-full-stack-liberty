@@ -78,9 +78,18 @@ export default function App(){
     const getTodos = async () => {
         try{
             const response = await fetch('/api/todos')
+            /* 
+                Look at app-server and see the /api/todos route
+                go to the routes identify the GET request that goes to api/todos
+                review the controllers and see that the controllers respond with 
+                an array of todos that are incomplete
+            */
+
+            // format it to a js array or object
             const foundTodos = await response.json()
+            // Use .reverse to make the newer todos go to the top of the list instead of the bottom
+            // Use setTodos to change the virtual DOM
             setTodos(foundTodos.reverse())
-            console.log('hey')
             const responseTwo = await fetch('/api/todos/completed')
             const foundCompletedTodos = await responseTwo.json()
             setCompletedTodos(foundCompletedTodos.reverse())

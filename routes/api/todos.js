@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const todoCtrl = require('../../controllers/api/todos')
 
-// Index incomplete
+// Index incomplete /api/todos see app-server for why
 router.get('/', todoCtrl.indexNotComplete, todoCtrl.jsonTodos)
 // Index complete
 router.get('/completed', todoCtrl.indexComplete, todoCtrl.jsonTodos)
