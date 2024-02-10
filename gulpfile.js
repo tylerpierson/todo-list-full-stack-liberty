@@ -33,9 +33,12 @@ gulp.task('default', (cb) => {
 	 env: { 'NODE_ENV': 'development'}
  });
  // SERVE  FRONT END WITH PROXY TO BACKEND
+ 	// browserSync is a frontend testing environment
 	browserSync.init({
 	 proxy: {
+		// Let's browser know that the backend is running at PORT 8000
 		 target: 'http://localhost:8000',
+		 // ws = web sockets, turn them on
 		 ws: true
 	 },
 	 serveStatic: ['./public']
